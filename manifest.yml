@@ -1,0 +1,7 @@
+applications:
+  - name: Maktabaty
+    random-route: true
+    memory: 256M
+    buildpacks:
+      - python_buildpack
+    path: .

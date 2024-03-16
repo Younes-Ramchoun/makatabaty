@@ -1,0 +1,152 @@
+{%extends 'base.html'%}
+{%block content%}
+  <style>
+	     .alert {
+	  position: fixed;
+	  top: 10px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  padding: 10px;
+	  background-color: rgb(95, 209, 95);
+	  color: white;
+	  z-index: 9999;
+	  opacity: 0;
+	  transition: opacity 0.5s ease-in-out;
+	}
+
+	.alert.show {
+	  opacity: 1;
+	}
+
+  </style>
+      <section style="text-align:centre;margin-left:25%;">
+        <div class="section_parte_one">
+          <h2 class="bib">Maktabaty</h2>
+          <p>
+            "La lecture est une porte ouverte sur un monde enchanté et <br />
+            passionnant qui élargit notre horizon et enrichit notre esprit."
+          </p>
+        </div>
+        <div class="section_parte_too">
+            <form action="{% url 'recherche_livre' %}" method="GET">
+                <div class="input-box">
+                  <i class="uil uil-search"></i>
+                  <input type="text" name="search_bar" placeholder="Trouvez votre prochain livre préféré..." />
+                  <button class="button">Chercher</button>
+                </div>
+                <br>
+                <b>Chercher par </b>&nbsp;&nbsp;&nbsp;
+                <label for="search_choice_titre">Titre</label>
+                <input type="radio" id="search_choice_titre" name="search_choice" value="titre" />
+                &nbsp;&nbsp;
+                <label for="search_choice_auteur">Auteur</label>
+                <input type="radio" id="search_choice_auteur" name="search_choice" value="auteur" />
+                &nbsp;&nbsp;
+                <label for="search_choice_domaine">Domaine</label>
+                <input type="radio" id="search_choice_domaine" name="search_choice" value="domaine" />
+                {% if search_bar %}
+                  <input type="hidden" name="search_bar" value="{{ search_bar }}">
+                {% endif %}
+                {% if search_choice %}
+                  <input type="hidden" name="search_choice" value="{{ search_choice }}">
+                {% endif %}
+              </form>
+        </div>
+      </section>
+    </main>
+     <script>
+		    window.addEventListener('DOMContentLoaded', function() {
+		  var successMessage = document.getElementById('success-message');
+		  
+		  if (successMessage) {
+		    successMessage.classList.add('show');
+		    setTimeout(function() {
+		      successMessage.classList.remove('show');
+		    }, 3000); // Temps en millisecondes avant que le message disparaisse (ici, 3 secondes)
+		  }
+		});
+   </script>
+        <!-- Votre contenu HTML de la page -->
+
+        <!-- Emplacement où vous souhaitez afficher les messages -->
+        {% if messages %}
+        {% for message in messages %}
+            <div id="success-message" class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        <br>
+        {% if livres %}
+        <h3 style="color: #128ead;text-align: center;"><b>Voici les livre disponible dans maktabaty pour le moment</b></h3>
+        {% else %}
+        <h3 style="color: #f70901;text-align: center;"><b>aucun livre disponible pour le moment</b></h3>
+        {% endif %}    
+    
+        <div class="container-fluid">
+      <div class="row">
+        <!-- righte body-->
+        {% if livres %}
+        <div class="col">
+          <div class="book-section">
+              <div class="book-list">
+          {% for livre in livres %}
+              <div class="book">
+                <img src="/images/{{ livre.image }}" alt="Book Cover">
+                    <h2>{{ livre.titre }}</h2>
+                    <p>{{ livre.auteur.nom }} {{ livre.auteur.prenom }}</p>
+                    <form method="post" action="{% url 'emprunter_livre' livre.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="livre_id" value="{{ livre.id }}">
+                        <input type="submit" value="Emprunter">
+                    </form>
+              </div>
+            {% endfor %}
+        {% endif %}
+              <!-- <div class="book">
+                <img src="la-peste.jpg" alt="Book Cover">
+                <h2>La Peste</h2>
+                <p>Albert Camus</p>
+                <button href="#" >Ajouter au panier</button>
+              </div>
+              <div class="book">
+                <img src="HARRY POTER.jpg" alt="Book Cover">
+                <h2>Harry Potter</h2>
+                <p>J.K. Rowling</p>
+                <button href="#" >Ajouter au panier</button>
+              </div>
+              <div class="book">
+                <img src="le hobbit.jpg" alt="Book Cover">
+                <h2>Le Hobbit</h2>
+                <p>J.R.R. Tolkien</p>
+                <button href="#" >Ajouter au panier</button>
+            </div>
+            <div class="book">
+              <img src="brave a new world.jpg" alt="Book Cover">
+              <h2>Brave New World</h2>
+              <p>Aldous Huxley</p>
+              <button href="#" >Ajouter au panier</button>
+          </div>
+          <div class="book">
+            <img src="L42TRANGER.jpg" alt="Book Cover">
+            <h2>L'Étranger</h2>
+            <p>Albert Camus</p>
+            <button href="#" >Ajouter au panier</button>
+        </div>
+        <div class="book">
+          <img src="clean architecture.webp" alt="Book Cover">
+          <h2>clean architecture</h2>
+          <p>Robert C. Martin</p>
+          <button href="#" >Ajouter au panier</button>
+      </div>
+      <div class="book">
+        <img src="introduction to algorithme.jpg" alt="Book Cover">
+        <h2> Algorithme</h2>
+        <p>Thomas H. Cormen</p>
+        <button href="#" >Ajouter au panier</button>
+      </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+{%endblock%}

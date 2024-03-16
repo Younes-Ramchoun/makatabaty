@@ -1,0 +1,580 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/home/info/boot">
+    <link rel="stylesheet" href="./css/accueil.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>accueil page Bibliothèque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <style>
+      /* style the header in html */
+* {
+  margin: 0px;
+  border: 0px;
+}
+header {
+  background-color: #128ead;
+  display: flex;
+  justify-content: space-between;
+  height: 9%;
+}
+.header_left,
+.header_middle,
+.header_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* left part of my header */
+.header_left {
+  width: 20%;
+  font-weight: bold;
+}
+.logo  a {
+  color: white;
+  font-weight: bold;
+  font-size:86%;
+}
+/* middle part of my header */
+.header_middle {
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 13px;
+  
+}
+.header_middle a{
+  color: white;
+ 
+}
+
+/* right part of my header */
+.header_right {
+  width: 30%;
+  font-weight: bold;
+  padding-top: 13px;
+  
+}
+.header_right a{
+  color: white;
+  font-weight: 12px;
+}
+nav ul {
+  list-style: none;
+  margin: 17px;
+  padding: 0;
+}
+
+
+div li {
+  display: inline-block;
+  margin: 0 10px;
+}
+/* CSS */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 12px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+div a {
+  
+  text-decoration: none;
+  font-size: 18px;
+}
+
+div a:hover {
+  
+}
+/* the main page */
+main {
+  display: flex;
+}
+aside {
+  background-color: rgb(254, 254, 254);
+  width: 24%;
+}
+section {
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  
+  
+}
+.bib {
+  text-align: center;
+  font-size: 55px;
+  font-weight: bolder;
+  color:#128ead;
+}
+.section_parte_one {
+  margin-top: 15%;
+}
+section .section_parte_one p {
+  font-family: Cursive;
+  align-items: center;
+  text-align: center;
+}
+.section_parte_too {
+  margin-top: 4%;
+  text-align: center;
+}
+#search_bar {
+  height: 25px;
+  border: #333;
+  background-color: #e3dede;
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 50px 0;
+  font-family: Arial, sans-serif;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul.social-media {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.social-media li {
+  margin-right: 15px;
+}
+
+.social-media li a {
+  color: #333;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-media li a:hover {
+  color: #007bff;
+}
+
+.bottom-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.bottom-bar p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+.footer-clean {
+  padding:50px 0;
+  background-color:#fff;
+  color:#4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-clean ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity:1;
+}
+
+.footer-clean .item.social {
+  text-align:right;
+}
+
+@media (max-width:767px) {
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align:center;
+  }
+}
+
+.footer-clean .item.social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-left:10px;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity:0.9;
+}
+
+@media (max-width:991px) {
+  .footer-clean .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item.social > a {
+    margin-top:10px;
+  }
+}
+
+.footer-clean .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}
+.foot{
+  padding-bottom: 0px;
+}
+footer{
+  padding-bottom: 0px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-box{
+  position: relative;
+  height: 76px;
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0,0, 0.1);
+}
+.input-box i,
+.input-box .button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-box i {
+  left: 20px;
+  font-size: 30px;
+  color: #707070;
+}
+.input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  padding: 0 155px 0 65px;
+  background-color: transparent;
+}
+.input-box .button{
+  right: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  background-color: #128ead;
+  cursor: pointer;
+}
+.input-box .button:active{
+  transform: translateY(-50%) scale(0.98);
+}
+@media screen and (max-width: 500px){
+  .input-box {
+    height: 66px;
+    margin: 0 8px;
+  }
+  .input-boxi {
+    left: 12px;
+    font-size: 25px;
+  }
+  .input-box input{
+    padding: 0 112px 0 50px;
+  }
+  .input-box.button{
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+.hh{
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #4070f4; 
+}
+a {
+  background-image: linear-gradient(
+    to right,
+    #54c7d6,
+    #54d66a 50%,
+    white 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.container a{
+  background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #54b3d6 50%,
+    black 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+a:before{
+  content: '';
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+ background-position: 0;
+}
+
+a:hover::before{
+  width: 100%;
+}
+.book-list {
+  display: flex;
+  justify-content: center;
+  
+}
+.book {
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 15rem;
+}
+.book input[type="submit"] {
+  background-color: #128ead;
+  color:white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+
+}
+.book input[type="submit"]:hover {
+  background-color: #4578e4;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.book-section {
+  margin: 2rem;
+  
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+ 
+}
+
+.book img {
+  max-width: 150px;
+}
+.book img {
+  width: 150px;
+  height: 185px;
+}
+
+.book h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.book p {
+  margin: 0.5rem 0;
+}
+
+    </style>
+
+
+  </head>
+  <body>
+    <!--header of my page-->
+    <header>
+      <div class="header_left">
+        <h2 class="logo"><a href="{% url 'accueil' %}">Maktabaty</a></h2>
+      </div>
+      <div class="header_middle">
+        <ul>
+          <li><a href="{% url 'accueil' %}">Accueil</a></li>
+          <li><a href="#footer">à propos</a></li>
+          <li><a href="#">Chercher un livre</a></li>
+          <li><a href="#">Contacter</a></li>
+        </ul>
+      </div>
+      <div class="header_right">
+        <ul>
+          {% if user.is_authenticated %}
+          {% if not user.is_staff %}
+            <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            <li><a href="{% url 'espace_personnel' %}">Profil</a></li>
+            {% else %}
+            <h5>Tu a connecté en tant que superviseur</h5>
+            <a class="dropdown-item" href="{% url 'deconnexion' %}">Déconnexion</a>
+            {% endif %}
+        {% else %} 
+            <li><a href="{% url 'inscription' %}">S'inscrire</a></li>
+            <li><a href="{% url 'user_login' %}">Se connecter</a> </li>
+        {% endif %}
+        </ul>
+      </div>
+    </header>
+    
+    <!--<main>-->
+    <!--main part of my page-->
+      {%block content%}
+      {%endblock%}
+    <div class="footer-clean foot">
+      <footer id="footer">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>À propos de la faculté</h3>
+                      <ul>
+                          <li><p>Venez  pour trouverez des informations sur notre faculté.</p></li><br>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h2>Contact de la bibliothèque</h2>
+                        <p>Voici les coordonnées de la bibliothèque :</p>
+                        <ul>
+                          <li>Téléphone : 1234567890</li>
+                          <li>Email : bibliotheque@example.com</li>
+                          <li>Adresse : Rue Zitoune, Meknes</li>
+                        </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>Groupe</h3>
+                      <ul>
+                          <li><a href="#">El alami Anis</a></li><br>
+                          <li><a href="#">Ramchoun Younes</a></li><br>
+                          <li><a href="#">Ben Lahcen Ayoub</a></li>
+                          <li><a href="#">Rhazi Chaimae</a></li><br>
+                          <li><a href="#">Chakour Youssra</a></li><br>
+                          <li><a href="#">Barhana Soukaina</a></li><br>
+                      </ul>
+                  </div>
+                  <div class="col-lg-3 item social"><a href="https://www.facebook.com/fsm.umi/"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                      <br><p class="copyright">Fs Meknes Maktabaty ©SMI6 2023</p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+      
+   
+  </body>
+</html>
